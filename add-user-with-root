@@ -1,0 +1,36 @@
+
+1.Login to the VM and Add the user:
+
+# useradd <username>
+
+# cd /home
+
+2.Login as a user
+
+#sudo su - <username> or su - username
+
+3.If there is no .ssh need to create manually and give the permission
+
+#mkdir.ssh
+
+#chmod 700 .ssh
+
+#cd /.ssh
+
+#ls
+
+#vim authorized_keys
+
+Paste  the user ssh-rsa key here and provide this permission
+
+ {chmod 600 authorized_keys}
+
+Exit from the user login as a root user, then follow below steps.
+
+vim /etc/sudoers
+
+## Same thing without a password
+
+# %wheel    ALL=(ALL)   NOPASSWD: ALL
+
+username  ALL=(ALL)   NOPASSWD: ALL
